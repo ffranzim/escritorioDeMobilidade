@@ -1,0 +1,45 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Incluir APP</ui:define>
+	<ui:define name="subTitulo">Incluir APP</ui:define>
+	<ui:define name="corpo">
+		<h:form id="form">
+			<div id="divBarraDeAcoes">
+				<p:toolbar id="barraDeAcoes">
+					<p:toolbarGroup>
+						<p:link id="salvar" outcome="/paginas/apps/incluir.xhtml" styleClass="imagensDeAcoes">
+							<p:graphicImage library="imagens" name="salvar_32.png" alt="Salvar" />
+						</p:link>
+
+						<p:commandLink styleClass="novo" update="@form" action="#{notificacaoAjaxStatusMB.verficarDisponibilidadeLogin()}">
+							<p:graphicImage library="imagens" name="add_32_2.png" />
+						</p:commandLink>
+
+						<p:commandLink id="gerarProspecao" styleClass="imagensDeAcoes">
+							<p:graphicImage library="imagens" name="powerPoint_32.png" alt="Gerar Prospecação" />
+						</p:commandLink>
+					</p:toolbarGroup>
+					<p:toolbarGroup align="right">
+						<p:commandLink id="pesquisar" styleClass="imagensDeAcoes">
+							<p:graphicImage library="imagens" name="pesquisar_32.png" />
+						</p:commandLink>
+					</p:toolbarGroup>
+				</p:toolbar>
+			</div>
+			<p:panelGrid columns="4" id="panel" styleClass="gridFormulario" columnClasses="rotulo, campo">
+				<p:outputLabel value="Nome: " for="nomeApp" />
+				<p:inputText id="nomeApp" size="30" />
+
+				<p:outputLabel value="Data: " for="dataCriacao" />
+				<p:inputText id="dataCriacao" size="30" />
+
+				<p:outputLabel value="Descrição: " for="descricao" />
+				<p:inputText id="descricao" size="30" />
+
+				<p:outputLabel value="GID DM: " for="gidDM" />
+				<p:inputText id="gidDM" size="30" />
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

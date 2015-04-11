@@ -1,0 +1,39 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Incluir Unidade</ui:define>
+	<ui:define name="subTitulo">Incluir Unidade</ui:define>
+	<ui:define name="corpo">
+		<h:form id="form">
+			<div id="divBarraDeAcoes">
+				<p:toolbar id="barraDeAcoes">
+					<p:toolbarGroup>
+						<p:link id="salvar" outcome="/paginas/unidades/incluir.xhtml" styleClass="imagensDeAcoes">
+							<p:graphicImage library="imagens" name="salvar_32.png" alt="Salvar" />
+						</p:link>
+						<p:commandLink styleClass="novo" update="@form" action="#{notificacaoAjaxStatusMB.verficarDisponibilidadeLogin()}">
+							<p:graphicImage library="imagens" name="add_32_2.png" />
+						</p:commandLink>
+					</p:toolbarGroup>
+					<p:toolbarGroup align="right">
+						<p:commandLink id="pesquisar" styleClass="imagensDeAcoes">
+							<p:graphicImage library="imagens" name="pesquisar_32.png" />
+						</p:commandLink>
+					</p:toolbarGroup>
+				</p:toolbar>
+			</div>
+			<div id="divFormulario">
+				<p:messages />
+				<p:panelGrid columns="3" id="panel" styleClass="gridFormulario" columnClasses="rotulo, campo">
+					<p:outputLabel value="Apelido Unidade : " for="apelidoUnidade" />
+					<p:inputText id="apelidoUnidade" size="30" required="true" maxlength="10" />
+					<p:message for="apelidoUnidade" />
+
+					<p:outputLabel value="Nome Unidade: " for="nomeUnidade" />
+					<p:inputText id="nomeUnidade" size="30" required="true" maxlength="50" />
+					<p:message for="nomeUnidade" />
+				</p:panelGrid>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

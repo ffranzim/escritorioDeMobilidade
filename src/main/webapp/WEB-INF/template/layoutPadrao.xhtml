@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">Titulo</ui:insert></title>
+	<h:outputStylesheet library="css" name="layout.css" />
+</h:head>
+<h:body>
+	<p:ajaxStatus styleClass="ajaxStatus">
+		<f:facet name="start">
+			<h:graphicImage library="gifs" name="ryu-gem-hadoken.gif" />
+			<h:graphicImage library="imagens" name="capgemini.png" styleClass="capgemini"/>
+			<h:graphicImage library="gifs" name="x_caixa.gif" styleClass="xCaixa"/>
+			<h:graphicImage library="gifs" name="java.gif" styleClass="javaGif"/>
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+	<header>
+		<div>
+			<h:panelGrid columns="2">
+				<h:link>
+					<h:graphicImage library="imagens" name="caixa.png" width="64" height="64" />
+				</h:link>
+				<p:outputLabel value="Escritório de Mobilidade" styleClass="textoMenuSuperior" />
+			</h:panelGrid>
+			<h:panelGrid styleClass="barraMenuInferior">
+				<p:outputLabel>
+					<ui:insert name="subTitulo"></ui:insert>
+				</p:outputLabel>
+			</h:panelGrid>
+		</div>
+	</header>
+</h:body>
+
+<div id="conteudo">
+	<ui:insert name="corpo">
+	</ui:insert>
+</div>
+
+<p:separator />
+
+<footer id="backgroundBranco">
+	<p:dock position="bottom" styleClass="backgroundBranco">
+		<p:menuitem value="App's" icon="/resources/imagens/windowsPhone_128.png" url="#" />
+		<p:menuitem value="Prospecção" icon="/resources/imagens/powerPoint_128.png" url="#" />
+		<p:menuitem value="Desenvolvimento" icon="/resources/imagens/googleCode_128.png" url="#" />
+		<p:menuitem value="Gráficos" icon="/resources/imagens/grafico_128.png" url="#" />
+		<p:menuitem value="Relatórios" icon="/resources/imagens/relatorio_128.png" url="#" />
+	</p:dock>
+	ssssssssssssssssssss
+</footer>
+</html>
