@@ -14,7 +14,7 @@ import lombok.Data;
 @ViewScoped
 public class NotificacaoAjaxStatusMB implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 12L;
 
 	private String login;
 	private String nome;
